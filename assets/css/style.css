@@ -1,0 +1,161 @@
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: white;
+
+}
+.Menu{
+    grid-area: Nav;
+    width: 100%;
+}
+.Filtros{
+    grid-area: Filter;
+    background-color: #c0c0c0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 0;
+    margin-bottom: 4%;
+}
+.Filtros h4{
+    font-size: 1em;
+}
+.Cuerpo{
+    grid-area: Grilla;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.card {
+    width: 22rem;
+}
+.Paginas{
+    grid-area: Page;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0;
+}
+.pages{
+    text-decoration: none;
+    border: 1px solid #c0c0c0;
+    padding: 0 3%;
+    border-right: 0;
+}
+.borde{
+    border-right: 1px solid #c0c0c0;;
+}
+.Pie{
+    grid-area: footer;
+    background-color: #0d6efd;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2% 0;
+    align-items: center;
+}
+.Pie p{
+    margin: 0;
+}
+.Pie a{
+    text-decoration: none;
+    color: white;
+}
+.Pie a:hover{
+    color: blueviolet;
+}
+.contenedor{
+    display: grid;
+    grid-template-areas: 
+    "Nav"
+    "Filter"
+    "Grilla"
+    "Page"
+    "footer"
+    ;
+    width: 100%;
+    height: 100vh;
+    grid-template-rows: 1fr 1fr 5fr 1fr 1fr;
+    margin: 0;
+    padding: 0;
+}
+@media (min-width: 576px) {
+    .contenedor{
+        grid-template-areas: 
+        "Nav Nav Nav"
+        "Filter Grilla Grilla"
+        "Filter Page Page"
+        "footer footer footer"
+        ;
+        grid-template-rows: 1fr 14fr 1fr 1fr;
+        /*grid-template-columns: 1fr 7fr 7fr;*/
+        min-height: 100%;
+        width: 100vw;
+    }
+    .Cuerpo{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow: auto;
+        padding: 1%;
+    }
+    .card{
+        width: 45%;
+    }
+    .Pie{
+        padding: 0.5%;
+    }
+    .Filtros{
+        justify-content: start;
+    }
+    .Filtros select{
+        width: 90%;
+    }
+}
+@media (min-width: 992px) {
+    .contenedor{
+        grid-template-areas: 
+        "Nav Filter Filter"
+        "Nav Grilla Grilla"
+        "Nav Grilla Grilla"
+        "footer Page Page"
+        
+        
+        ;
+        grid-template-columns: 1fr 2.5fr 2.5fr;
+    }
+    .Menu{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .container-fluid{
+        display: flex;
+        flex-direction: column;
+    }
+    .menu2{
+        display: flex;
+        flex-direction: column;
+    }
+    .menu3{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-item{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-link{
+        display: flex;
+        flex-direction: column;
+    }
+    .card{
+        width: 23%;
+    }
+}
